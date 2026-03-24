@@ -164,7 +164,7 @@ CHILD_TOOLS = [
 
 # -- Subagent: fresh context, filtered tools, summary-only return --
 def run_subagent(prompt: str) -> str:
-    sub_messages = [{"role": "user", "content": prompt}]  # fresh context
+    sub_messages = [{"role": "assistant", "content": SUBAGENT_SYSTEM},{"role": "user", "content": prompt}]  # fresh context
 
     response = None
     for _ in range(30):  # safety limit
@@ -274,7 +274,7 @@ def agent_loop(messages: list):
 # 在当前项目中的test文件夹中创建一个websocket连接管理中心项目，后端使用fastapi框架，前端使用vue和js
 # 检测在当前项目中的test文件夹中项目，更新test文件夹中的readme文件内容
 if __name__ == "__main__":
-    history = []
+    history = [{"role": "system", "content": SYSTEM}]
     while True:
         try:
             query = input("\033[36ms04 >> \033[0m")

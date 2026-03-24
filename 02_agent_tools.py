@@ -189,7 +189,7 @@ def agent_loop(messages: list):
 
 
 if __name__ == "__main__":
-    history = []
+    history = [{"role": "system", "content": SYSTEM}]
     while True:
         try:
             query = input("\033[36ms02 >> \033[0m")
