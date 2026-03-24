@@ -1,0 +1,23 @@
+# WebSocket Connection Manager - Backend Dependencies
+# Python 3.8+ required
+
+# Core framework
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+
+# WebSocket support (included in fastapi but explicit)
+websockets>=12.0
+
+# Data validation
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+
+# ASGI support
+starlette>=0.27.0
+
+# Optional: for production use with gunicorn
+gunicorn>=21.2.0
+
+# Optional: additional utilities
+python-multipart>=0.0.6
+aiofiles>=23.2.1
