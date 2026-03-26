@@ -367,6 +367,11 @@ onMounted(() => {
   margin-bottom: 10px;
 }
 
+.page-header p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
 .main-content {
   display: grid;
   grid-template-columns: 1fr 400px;
@@ -375,9 +380,109 @@ onMounted(() => {
   margin: 0 auto;
 }
 
+/* Tablet and smaller desktop */
 @media (max-width: 1200px) {
   .main-content {
     grid-template-columns: 1fr;
+  }
+  
+  .page-header h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 768px) {
+  .home-view {
+    padding: 15px;
+  }
+  
+  .page-header {
+    margin-bottom: 20px;
+  }
+  
+  .page-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .page-header p {
+    font-size: 1rem;
+  }
+  
+  .panel {
+    padding: 15px;
+  }
+  
+  .status-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px;
+  }
+  
+  .connection-stats {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .action-buttons .el-button {
+    width: 100%;
+  }
+  
+  .messages-container {
+    height: 250px;
+    padding: 12px;
+  }
+  
+  .message-item {
+    padding: 8px 12px;
+    margin: 6px 0;
+  }
+  
+  .message-time {
+    font-size: 0.75rem;
+  }
+  
+  .logs-section h2 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Small mobile phones */
+@media (max-width: 480px) {
+  .home-view {
+    padding: 10px;
+  }
+  
+  .page-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .page-header p {
+    font-size: 0.9rem;
+  }
+  
+  .panel {
+    padding: 12px;
+    border-radius: 8px;
+  }
+  
+  .messages-container {
+    height: 200px;
+    padding: 10px;
+  }
+  
+  .message-content {
+    font-size: 0.9rem;
+  }
+  
+  .client-id {
+    font-size: 0.8rem;
   }
 }
 
@@ -481,5 +586,34 @@ onMounted(() => {
 
 .logs-section {
   margin-top: 20px;
+}
+
+/* Accessibility improvements */
+.home-view * {
+  /* Ensure sufficient contrast for text */
+}
+
+.message-item:focus {
+  outline: 2px solid #409eff;
+  outline-offset: 2px;
+}
+
+.el-button:focus,
+.el-input:focus-within {
+  outline: 2px solid #409eff;
+  outline-offset: 2px;
+}
+
+/* Screen reader only class */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 </style>
